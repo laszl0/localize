@@ -1,1 +1,19 @@
-<h1>Hello world</h1>
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>localize</title>
+  <meta name="description" content="localize">
+  <meta name="author" content="laszl0">
+</head>
+
+<body>
+  <div id="queryParams"></div>
+  <script>
+    document.getElementById('queryParams').innerHTML = window.location.search
+    //var urlParams = new URLSearchParams(window.location.search);
+  </script>
+</body>
+</html>
