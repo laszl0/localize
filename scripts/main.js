@@ -34,6 +34,7 @@ window.addEventListener('load', function (e) {
     // add new location
     var hash = window.location.hash
     console.log(hash)
+    document.getElementById('queryParams').innerHTML = hash
     if (hash != '') {
         var parts = hash.split('|')
         console.log(parts)
