@@ -46,6 +46,8 @@
     // Check if a new cache is available on page load.
     window.addEventListener('load', function (e) {
 
+      window.applicationCache.update(); // Attempt to update the user's cache.
+
       window.applicationCache.addEventListener('checking', function (e) {
         if (confirm('checking?')) {
           //window.location.reload();
