@@ -39,23 +39,23 @@
 
     // This is the unique name for the cache controlled by this version of the worker.
     get CACHE_NAME() {
-      return this.CACHE_PREFIX + 'a3a28f38f108624cea151485e4b3c6910db406fd';
+      return this.CACHE_PREFIX + '6d714cee12d07d641801a53a29cf57778ac8e520';
     },
 
     // This is a list of resources that will be cached.
     RESOURCES: [
-      './favicon.ico', // e130b350978556b0789eccb645364440a791968d
       './images/icon-144x144.png', // c5a19e45813f786bb9b036ab94c5cfd2d716f8fe
       './images/icon-192x192.png', // 7bd0826642db65614225553fe22e1018639d0faa
       './images/icon-48x48.png', // 48432af0ed7ace0d3e87f15e6731846e80ac9de0
       './images/icon-512x512.png', // 4296c461af9538d0ca6309c629bd32b038db5db7
       './images/icon-72x72.png', // b21ceba81e723de749057644daa9bf965f7a5151
       './images/icon-96x96.png', // 0426de5fe7815d94094fed99928c66e2a846abac
-      './index.html', // 47858ed602c08337b7f3d11aadaf0fa80ebbc645
-      './manifest.json', // 3a0de36be19f8767303d53fd972d4a5a205b87ea
-      './robots.txt', // daa28737426043ff576e7f74dc6dd2b469cf5cb9
+      './index.html', // 4e3a54d8b81768da830391e222bfbd44484ec5ed
       './scripts/main.js', // ebb75faf6f7e87caecc0e285253be2036df2ef1c
+      './scripts/material.min.js', // 1ab50540032210391656928cd1564530353096cd
       './scripts/offline-manager.js', // e2e09e000c5b64035940ae44e9c0936eb25ecd51
+      './styles/material-icons.css', // 4a0678bd5f45c58ae2c7eaef50643bdd5dee42ec
+      './styles/material.min.css', // 62364e7cb9cfd9889c1bf3223ac1640509237b9a
       './styles/stylesheet.css', // da39a3ee5e6b4b0d3255bfef95601890afd80709
       './styles/v1.css', // 879aa0ada06426985d68c9a33d667383a61d1b89
 
