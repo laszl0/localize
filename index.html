@@ -43,13 +43,14 @@
   <a href="https://www.google.com/maps/@?api=1&map_action=map">test map open</a>
   <p>test update</p>
   <script>
-    document.getElementById('queryParams').innerHTML = window.location.hash
-    //var urlParams = new URLSearchParams(window.location.search);
-
-
-
     // Check if a new cache is available on page load.
     window.addEventListener('load', function (e) {
+
+      window.applicationCache.addEventListener('checking', function (e) {
+        if (confirm('checking?')) {
+          //window.location.reload();
+        }
+      }, false);
 
       window.applicationCache.addEventListener('updateready', function (e) {
         if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
