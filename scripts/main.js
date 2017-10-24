@@ -17,6 +17,20 @@ function renderEntry(entry) {
     td3.innerHTML = entry.number //'2'
     tr.appendChild(td3)
 
+    var td4 = document.createElement("td")
+    var map = document.createElement("a")
+    var link = [
+        //'&origin=Current%20Location',
+        "&destination=",
+        encodeURIComponent(entry.location),
+        ',',
+        encodeURIComponent(entry.street)
+    ]
+    map.href = "https://www.google.com/maps/dir/?api=1" + link.join('')
+    map.innerHTML = "map"
+    td4.appendChild(map)
+    tr.appendChild(td4)
+
     componentHandler.upgradeElement(tr)
     document.getElementById('table-body').appendChild(tr)
 }
