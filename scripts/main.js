@@ -65,8 +65,11 @@ function buttonClearLocalStorage(e) {
 
 window.addEventListener('load', function (e) {
 
-    var buttonClear = document.getElementById("button-clear");
+    var buttonClear = document.getElementById("button-clear")
     buttonClear.addEventListener("click", buttonClearLocalStorage, false)
+
+    var buttonClear1 = document.getElementById("button-clear1")
+    buttonClear1.addEventListener("click", buttonClearLocalStorage, false)
 
     // get locations from localstorage
     loadEntries()
