@@ -33,24 +33,71 @@
 
   <link rel="stylesheet" href="styles/material.min.css">
   <link rel="stylesheet" href="styles/material-icons.css">
-  <script src="scripts/material.min.js"></script>
-
   <link rel="stylesheet" type="text/css" media="screen" href="styles/stylesheet.css">
 
+  <script src="scripts/material.min.js"></script>
   <script src="scripts/main.js"></script>
   <script src="scripts/offline-manager.js"></script>
 </head>
 
 <body>
+
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Title</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Title</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Location</th>
+              <th class="mdl-data-table__cell--non-numeric">Street</th>
+              <th>Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">Bad Tölz</td>
+              <td class="mdl-data-table__cell--non-numeric">Am Schloßplatz</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </main>
+  </div>
+
+
+
+  <!-- 
   <div id="queryParams">this is going to be replaced when running</div>
   <a href="https://www.google.com/maps/@?api=1&map_action=map">test map open</a>
-  <p>test update</p>
-  <script>
-    // Check if a new cache is available on page load.
-    window.addEventListener('load', function (e) {
-      
-    }, false);
-  </script>
+  <p>test update</p> 
+-->
+
 </body>
 
 </html>
