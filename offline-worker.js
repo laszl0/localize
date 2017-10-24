@@ -39,7 +39,7 @@
 
     // This is the unique name for the cache controlled by this version of the worker.
     get CACHE_NAME() {
-      return this.CACHE_PREFIX + 'faaa1c4aacfee80b90bc6b6cfd4d2df410bb79d6';
+      return this.CACHE_PREFIX + '6846120a5b3cf38ff0ed6f172894b174602f37e6';
     },
 
     // This is a list of resources that will be cached.
@@ -50,8 +50,8 @@
       './images/icon-512x512.png', // 4296c461af9538d0ca6309c629bd32b038db5db7
       './images/icon-72x72.png', // b21ceba81e723de749057644daa9bf965f7a5151
       './images/icon-96x96.png', // 0426de5fe7815d94094fed99928c66e2a846abac
-      './index.html', // a6e7cefbfcb942bf31ebc086636eedeeb4d7f992
-      './scripts/main.js', // afa3f00450461837c5cbb2262a452100dbd08cf7
+      './index.html', // f11988bd36904fa8902c1d2a0bcf65b60c2df688
+      './scripts/main.js', // a57996258a0cf8a44b9f4b9e9de1f7583cdafa5e
       './scripts/material.min.js', // 1ab50540032210391656928cd1564530353096cd
       './scripts/offline-manager.js', // e2e09e000c5b64035940ae44e9c0936eb25ecd51
       './styles/material-icons.css', // 6ca40c49309d3a7e62da2501c26e49e6d9224d6b

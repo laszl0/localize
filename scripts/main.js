@@ -21,17 +21,22 @@ function renderEntry(entry) {
     document.getElementById('table-body').appendChild(tr)
 }
 
-window.addEventListener('load', function (e) {
+function renderEntries() {
+    for (var i = 0; i < window.locations.length; i++) {
+        renderEntry(window.locations[i])
+    }
+}
 
-    // get locations from localstorage
+function loadEntries() {
     var locationsStr = localStorage.getItem("locations")
     if (locationsStr === null) {
         locationsStr = '[]'
     }
-    var locations = JSON.parse(locationsStr)
-    console.log(locations)
+    window.locations = JSON.parse(locationsStr)
+    console.log(window.locations)
+}
 
-    // add new location
+function addNewEntry() {
     var hash = window.location.hash
     console.log(hash)
     document.getElementById('queryParams').innerHTML = hash
@@ -40,15 +45,35 @@ window.addEventListener('load', function (e) {
         var parts = hash.split('|')
         console.log(parts)
 
-        locations.push({ 'location': parts[3], 'street': parts[2], 'number': 3 })
+        window.locations.push({ 'location': parts[3], 'street': parts[2], 'number': 3 })
 
         // save locations to localstorage
-        var locationsNewStr = JSON.stringify(locations)
+        var locationsNewStr = JSON.stringify(window.locations)
         localStorage.setItem("locations", locationsNewStr)
     }
+}
 
-    for (var i = 0; i < locations.length; i++) {
-        renderEntry(locations[i])
+function buttonClearLocalStorage(e) {
+    localStorage.clear()
+    var node = document.getElementById('table-body')
+    while (node.hasChildNodes()) {
+        node.removeChild(node.lastChild)
     }
+    loadEntries()
+    renderEntries()
+}
 
-}, false);
+window.addEventListener('load', function (e) {
+
+    var buttonClear = document.getElementById("button-clear");
+    buttonClear.addEventListener("click", buttonClearLocalStorage, false)
+
+    // get locations from localstorage
+    loadEntries()
+
+    // add new location
+    addNewEntry()
+
+    // display locations
+    renderEntries()
+}, false)
