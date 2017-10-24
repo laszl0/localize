@@ -36,6 +36,7 @@ window.addEventListener('load', function (e) {
     console.log(hash)
     document.getElementById('queryParams').innerHTML = hash
     if (hash != '') {
+        hash = decodeURIComponent(hash)
         var parts = hash.split('|')
         console.log(parts)
 
