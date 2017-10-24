@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/laszl0/localize/issues"
   },
-  "homepage": "https://github.com/laszl0/localize#readme"
+  "homepage": "https://github.com/laszl0/localize#readme",
+  "dependencies": {}
 }
