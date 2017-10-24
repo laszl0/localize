@@ -39,35 +39,25 @@
 
     // This is the unique name for the cache controlled by this version of the worker.
     get CACHE_NAME() {
-      return this.CACHE_PREFIX + '0c6488626c263286f5fb69996af51a96cdefcfa9';
+      return this.CACHE_PREFIX + '9170f8ad0ff8693e03569623af42e79c047a2efb';
     },
 
     // This is a list of resources that will be cached.
     RESOURCES: [
-      './favicon.ico', // e08a45a41f214a931badef8ce7de67ced913e203
-      './images/apple-touch-icon-114x114.png', // d18039f8fea99e40a95174ef9e9b1535bb31b19b
-      './images/apple-touch-icon-120x120.png', // 77fc407482f21d8a504b67a402ec24460e5cc178
-      './images/apple-touch-icon-144x144.png', // 088b71de4d4086c5f7e536beb1732b37d996a252
-      './images/apple-touch-icon-152x152.png', // 0da99f5359d8ed5d289f692f8df10b8472da4abc
-      './images/apple-touch-icon-57x57.png', // 05d01de8b368c72fddf4e7586d231ca0b43868af
-      './images/apple-touch-icon-60x60.png', // 6e19dde744cb62d4ec7b402ef5822a60f94390de
-      './images/apple-touch-icon-72x72.png', // 357e78f8ea62af3a9dc9869ac797871799277b16
-      './images/apple-touch-icon-76x76.png', // 8c81f23bd12150e31723405cb261aec8bb882961
-      './images/favicon-128x128.png', // c058f85521d02ca09dc4428fa27bc0750abb2e74
-      './images/favicon-16x16.png', // f159e70f0c1d2819d768e37b4999fb355d3bc2aa
-      './images/favicon-196x196.png', // 49f477e377bf66df6a5c939d4a8a016982dfb675
-      './images/favicon-32x32.png', // 07422f1e20069d66f825e794f2c6f54f0ee80d51
-      './images/favicon-96x96.png', // 0f621a46f7ce959046c1a781a8cabccdf36a6dd7
-      './images/mstile-144x144.png', // 1143726c60ee73b882af65e408745782282d618c
-      './images/mstile-150x150.png', // 70afb464b27eb37de2af5ed8c9e6857444eb0895
-      './images/mstile-310x150.png', // a8476b8ba5ea497c6acbc506ce416c616fe4f5da
-      './images/mstile-310x310.png', // 6cd3f41d4a135d5ec5695ade20845f40cefb34a4
-      './images/mstile-70x70.png', // 6f75379a90f9615b823d57537ffa8eb1a0887702
-      './index.html', // 59f97e6b7fd96dcee7660fec941b7a1548eb6bc3
+      './favicon.ico', // e130b350978556b0789eccb645364440a791968d
+      './images/icon-144x144.png', // c5a19e45813f786bb9b036ab94c5cfd2d716f8fe
+      './images/icon-192x192.png', // 7bd0826642db65614225553fe22e1018639d0faa
+      './images/icon-48x48.png', // 48432af0ed7ace0d3e87f15e6731846e80ac9de0
+      './images/icon-512x512.png', // 4296c461af9538d0ca6309c629bd32b038db5db7
+      './images/icon-72x72.png', // b21ceba81e723de749057644daa9bf965f7a5151
+      './images/icon-96x96.png', // 0426de5fe7815d94094fed99928c66e2a846abac
+      './index.html', // e33d2648b95c619c3ff03a8fedef655d0dc9a9ca
+      './manifest.json', // 3a0de36be19f8767303d53fd972d4a5a205b87ea
       './robots.txt', // daa28737426043ff576e7f74dc6dd2b469cf5cb9
       './scripts/main.js', // ebb75faf6f7e87caecc0e285253be2036df2ef1c
       './scripts/offline-manager.js', // e2e09e000c5b64035940ae44e9c0936eb25ecd51
-      './styles/stylesheet.css', // 7997e49a29b051cadc22884144acdba1efdff492
+      './styles/stylesheet.css', // da39a3ee5e6b4b0d3255bfef95601890afd80709
+      './styles/v1.css', // 879aa0ada06426985d68c9a33d667383a61d1b89
 
     ],
 
