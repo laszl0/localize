@@ -1,6 +1,6 @@
 
 
-function createEntryElement(entry) {
+function createEntryElement(region, entry) {
 
     var liElm = document.createElement('li')
     liElm.className = "mdl-list__item mdl-list__item--two-line"
@@ -41,14 +41,12 @@ function createEntryElement(entry) {
     var mapElm = document.createElement('a')
     mapElm.className = "mdl-list__item-secondary-action"
 
-    var link = [
-        "||",
-        encodeURIComponent(entry.location),
-        '|',
-        encodeURIComponent(entry.street),
-        '||||'
-    ]
-    mapElm.href = "/localize/add.html#q=" + link.join('')
+    // var link = [
+    //     region.id,
+    //     "|",
+    //     entry.id,
+    // ].join('')
+    mapElm.href = "/localize/edit.html#id=" + entry.id
 
     var mapIcon = document.createElement('i')
     mapIcon.className = "material-icons"
@@ -65,6 +63,8 @@ function createEntryElement(entry) {
 
 function renderEntries() {
     var regions = loadRegions()
+    var allEntries = loadTodaysEntries()
+
     var indexTabsElm = document.getElementById('index-tabs')
     var containerNavbarElm = document.getElementById('index-tabs-navbar')
     var containerContentElm = document.getElementById('index-tabs-content')
@@ -93,13 +93,15 @@ function renderEntries() {
         containerContentElm.appendChild(containerEntriesElm)
 
         // add entries
-        var entries = loadEntries(regions[i].id)
+        var entries = allEntries.filter(function (entry) {
+            return entry.region == regions[i].id
+        })
 
         var containerListElm = document.createElement("ul")
         containerListElm.className = "mdl-list"
 
         for (var j = 0; j < entries.length; j++) {
-            var entryElm = createEntryElement(entries[j])
+            var entryElm = createEntryElement(regions[i], entries[j])
             componentHandler.upgradeElement(entryElm)
             containerListElm.appendChild(entryElm)
         }
@@ -113,20 +115,20 @@ function renderEntries() {
     componentHandler.upgradeElement(indexTabsElm)
 }
 
-function buttonClearLocalStorage(e) {
-    localStorage.clear()
-    var node = document.getElementById('table-body')
-    while (node.hasChildNodes()) {
-        node.removeChild(node.lastChild)
-    }
-    loadEntries()
-    renderEntries()
-}
+// function buttonClearLocalStorage(e) {
+//     localStorage.clear()
+//     var node = document.getElementById('table-body')
+//     while (node.hasChildNodes()) {
+//         node.removeChild(node.lastChild)
+//     }
+//     l1oadEntries()
+//     renderEntries()
+// }
 
 window.addEventListener('load', function (e) {
 
     // get locations from localstorage
-    //loadEntries()
+    //l1oadEntries()
 
     // display locations
     renderEntries()

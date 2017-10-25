@@ -39,7 +39,7 @@
 
     // This is the unique name for the cache controlled by this version of the worker.
     get CACHE_NAME() {
-      return this.CACHE_PREFIX + '2e6be440b6fab84082c90329a968992082037fec';
+      return this.CACHE_PREFIX + '5e6bacfc03c96bca6cfebb4f7302293f8f0d77b3';
     },
 
     // This is a list of resources that will be cached.
@@ -50,15 +50,16 @@
       './images/icon-512x512.png', // 4296c461af9538d0ca6309c629bd32b038db5db7
       './images/icon-72x72.png', // b21ceba81e723de749057644daa9bf965f7a5151
       './images/icon-96x96.png', // 0426de5fe7815d94094fed99928c66e2a846abac
-      './index.html', // df0fe41f4c54cc5522a3bb18872ba002c5c1a5b7
-      './scripts/add.js', // 18450af93de623e0eca8e9102c5f239cf1a5b1dd
-      './scripts/index.js', // 83e9eb10abdeefa7b091e103dd16eb32071d5748
+      './index.html', // f369a3a1fa7e73a5f1916d77b7748167b2c06177
+      './scripts/add.js', // 49c130ccf99e6783dca59baf1298bacc6c0d3b10
+      './scripts/edit.js', // d2a61e00ebd1dc0f9578107aad77d2883091d687
+      './scripts/index.js', // 9e1362fcbf556a9571db65301c4126a868fed6a1
       './scripts/material.min.js', // 1ab50540032210391656928cd1564530353096cd
       './scripts/offline-manager.js', // e2e09e000c5b64035940ae44e9c0936eb25ecd51
-      './scripts/shared.js', // 0a43c5e0ff6dafe1d446e7860a1271fca78f09a9
+      './scripts/shared.js', // b9d8aebfaabafa71795df599d507e1924cab8124
       './styles/material-icons.css', // 6ca40c49309d3a7e62da2501c26e49e6d9224d6b
       './styles/material.min.css', // 62364e7cb9cfd9889c1bf3223ac1640509237b9a
-      './styles/stylesheet.css', // a156025f0bdb4bdf3adce975194a1a3576c16079
+      './styles/stylesheet.css', // 60cec3c477d64c4b3403fa11927ffc2fa85830fa
 
     ],
 

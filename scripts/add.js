@@ -1,60 +1,36 @@
 
-function createRegionElement(uniqueId, uniqueValue) {
-    var label = document.createElement("label")
-    label.className = 'add-radio-square mdl-radio mdl-js-radio mdl-js-ripple-effect'
-    label.htmlFor = uniqueId
 
-    var input = document.createElement("input")
-    input.type = "radio"
-    input.id = uniqueId
-    input.className = "mdl-radio__button"
-    input.name = "regions"
-    input.value = uniqueId
-
-    var span = document.createElement("span")
-    span.className = "mdl-radio__label"
-    span.innerHTML = uniqueValue
-
-    label.appendChild(input)
-    label.appendChild(span)
-
-    return label
-}
-
-function renderRegions() {
-
-    var regions = loadRegions()
-
-    var containerElm = document.getElementById("regions-container")
-
-    for (var i = 0; i < regions.length; i++) {
-        var regionElm = createRegionElement(regions[i].id, regions[i].name)
-        componentHandler.upgradeElement(regionElm)
-        containerElm.appendChild(regionElm)
-    }
-}
-
-function loadUrlEntry() {
+function fillEntryWithDataFromUrl() {
     var hash = window.location.hash
     console.log(hash)
-
-    if (hash != '' && hash != '#') {
-        hash = decodeURIComponent(hash)
-        var parts = hash.split('|')
-        console.log(parts)
-
-        if (parts.length > 4) {
-            document.getElementById('location').setAttribute('value', parts[3])
-            componentHandler.downgradeElements(document.getElementById('location'))
-            componentHandler.upgradeElement(document.getElementById('location'))
-            
-            document.getElementById('street').value = parts[2]
-            document.getElementById('number').value = '3'
-        }
-
-        // clear url hash value
-        window.location.hash = ''
+    if (hash.startsWith('#data=') == false) {
+        return
     }
+
+    var rawData = hash.replace('#data=', '')
+    console.log(rawData)
+    if (rawData == '') {
+        return
+    }
+
+    // decode the data from a specific format
+    var data = decodeURIComponent(rawData)
+    var parts = data.split('|')
+    var entry = {
+        'location': parts[3],
+        'street': parts[2],
+        'number': '5',
+        'region': ''
+    }
+
+    document.getElementById('location').setAttribute('value', entry.location)
+    document.getElementById('street').value = entry.street
+    document.getElementById('number').value = entry.number
+
+    // fix for dynamic textfield
+    document.getElementById('field-location').MaterialTextfield.checkDirty()
+    document.getElementById('field-street').MaterialTextfield.checkDirty()
+    document.getElementById('field-number').MaterialTextfield.checkDirty()
 }
 
 function buttonSaveHandler(e) {
@@ -71,11 +47,15 @@ function buttonSaveHandler(e) {
     // TODO: handle validation
 
     // save locations to localstorage
-    var entries = loadEntries(region)
+    var entries = loadTodaysEntries()
     entries.push(entry)
-    storeEntries(region, entries)
+    storeTodaysEntries(entries)
 
     this.setAttribute("disabled", "")
+
+    // clear url hash value, so we can't reload
+    window.location.hash = ''
+
     //window.location.reload()
     //window.close()
     //window.history.go(-1)
@@ -88,11 +68,11 @@ function buttonCancelHandler(e) {
 
 window.addEventListener('load', function (e) {
 
-    // load location data from url
-    loadUrlEntry()
-
     // render regions
-    renderRegions()
+    renderRegions("regions-container")
+
+    // load data
+    fillEntryWithDataFromUrl()
 
     // register click events
     var buttonSave = document.getElementById("button-save")

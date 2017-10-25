@@ -4,10 +4,15 @@
 .add-radio-square{
     margin: 6px;
 }
-.add-button-sq{
+.add-button-sq,
+.cancel-button-sq{
     float: right;
     margin-left: 6px;
     margin-right: 6px;
+}
+
+.delete-button-sq{
+    float: left;
 }
 
 /*inde page*/

@@ -37,7 +37,7 @@
 
     <script src="scripts/material.min.js"></script>
     <script src="scripts/shared.js"></script>
-    <script src="scripts/add.js"></script>
+    <script src="scripts/edit.js"></script>
     <script src="scripts/offline-manager.js"></script>
 </head>
 
@@ -47,15 +47,15 @@
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
-                <span class="mdl-layout-title" id="queryParams">add</span>
+                <span class="mdl-layout-title" id="queryParams">edit</span>
                 <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
             </div>
         </header>
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">add</span>
+            <span class="mdl-layout-title">edit</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="/localize">List</a>
+                <a class="mdl-navigation__link" href="/localize">list</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
@@ -64,15 +64,16 @@
                 <div class="add-card-square mdl-card mdl-shadow--2dp" style="width: 100%">
                     <div class="mdl-card__supporting-text">
                         <form action="#">
-                            <div class="mdl-textfield mdl-js-textfield">
+                            <input type="hidden" id="id" >
+                            <div id="field-location" class="mdl-textfield mdl-js-textfield">
                                 <input class="mdl-textfield__input" type="text" id="location" name="location">
                                 <label class="mdl-textfield__label" for="location">location</label>
                             </div>
-                            <div class="mdl-textfield mdl-js-textfield">
+                            <div id="field-street" class="mdl-textfield mdl-js-textfield">
                                 <input class="mdl-textfield__input" type="text" id="street" name="street">
                                 <label class="mdl-textfield__label" for="street">street</label>
                             </div>
-                            <div class="mdl-textfield mdl-js-textfield">
+                            <div id="field-number" class="mdl-textfield mdl-js-textfield">
                                 <input class="mdl-textfield__input" type="text" id="number" name="number">
                                 <label class="mdl-textfield__label" for="number">number</label>
                             </div>
@@ -81,6 +82,10 @@
                         </form>
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
+                        <button id="button-delete" class="delete-button-sq mdl-button mdl-js-button mdl-button--accent">
+                            Delete
+                        </button>
+
                         <button id="button-save" class="add-button-sq mdl-button mdl-js-button mdl-button--colored">
                             Save
                         </button>
