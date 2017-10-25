@@ -54,16 +54,18 @@ function addNewEntry() {
     var hash = window.location.hash
     console.log(hash)
     document.getElementById('queryParams').innerHTML = hash
-    if (hash != '') {
+    if (hash != '' && hash != '#') {
+        window.location.hash = ''
         hash = decodeURIComponent(hash)
         var parts = hash.split('|')
         console.log(parts)
+        if (parts.length > 4) {
+            window.locations.push({ 'location': parts[3], 'street': parts[2], 'number': 3 })
 
-        window.locations.push({ 'location': parts[3], 'street': parts[2], 'number': 3 })
-
-        // save locations to localstorage
-        var locationsNewStr = JSON.stringify(window.locations)
-        localStorage.setItem("locations", locationsNewStr)
+            // save locations to localstorage
+            var locationsNewStr = JSON.stringify(window.locations)
+            localStorage.setItem("locations", locationsNewStr)
+        }
     }
 }
 
@@ -78,7 +80,7 @@ function buttonClearLocalStorage(e) {
 }
 
 window.addEventListener('load', function (e) {
-    
+
     var buttonClear1 = document.getElementById("button-clear1")
     buttonClear1.addEventListener("click", buttonClearLocalStorage, false)
 
