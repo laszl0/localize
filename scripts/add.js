@@ -44,7 +44,7 @@ function loadUrlEntry() {
         console.log(parts)
 
         if (parts.length > 4) {
-            document.getElementById('location').value = parts[3]
+            document.getElementById('location').setAttribute('value', parts[3])
             document.getElementById('street').value = parts[2]
             document.getElementById('number').value = '3'
         }
