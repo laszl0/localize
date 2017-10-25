@@ -18,7 +18,7 @@ function createEntryElement(region, entry) {
     ].join('')
     //https://her.is/directions/drive/Bad Tolz/Munich
     //https://share.here.com/directions/mix//Oberstadl-1,Warngau
-    editElm.href = "https://share.here.com/directions/drive//" + link
+    editElm.href = "https://wego.here.com/directions/drive//" + link
 
     // var link = [
     //     "&destination=",
