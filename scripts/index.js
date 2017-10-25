@@ -16,8 +16,8 @@ function createEntryElement(region, entry) {
         ',',
         encodeURIComponent(entry.location)
     ].join('')
-    //https://wego.here.com/directions/mix//Oberstadl-1,Warngau
-    editElm.href = "https://wego.here.com/directions/mix/" + link
+    //https://share.here.com/directions/mix//Oberstadl-1,Warngau
+    editElm.href = "https://share.here.com/directions/mix/" + link
 
     // var link = [
     //     "&destination=",
