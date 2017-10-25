@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles/stylesheet.css">
 
     <script src="scripts/material.min.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/add.js"></script>
     <script src="scripts/offline-manager.js"></script>
 </head>
 
@@ -46,21 +46,21 @@
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
-                <span class="mdl-layout-title" id="queryParams">Title</span>
+                <span class="mdl-layout-title" id="queryParams">add</span>
                 <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
             </div>
         </header>
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Title2</span>
+            <span class="mdl-layout-title">add</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="" id="button-clear1">Clear2</a>
+                <a class="mdl-navigation__link" href="/">List</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
             <div class="page-content">
 
-                <div class="demo-card-square mdl-card mdl-shadow--2dp" style="width: 100%">
+                <div class="add-card-square mdl-card mdl-shadow--2dp" style="width: 100%">
                     <div class="mdl-card__supporting-text">
                         <form action="#">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -75,6 +75,15 @@
                                 <input class="mdl-textfield__input" type="text" id="sample3">
                                 <label class="mdl-textfield__label" for="sample3">number</label>
                             </div>
+
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                                <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+                                <span class="mdl-radio__label">Region 1</span>
+                            </label>
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                                <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+                                <span class="mdl-radio__label">Region 2</span>
+                            </label>
                         </form>
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
