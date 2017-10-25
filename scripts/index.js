@@ -12,12 +12,20 @@ function createEntryElement(region, entry) {
     editElm.className = "index-edit-button"
 
     var link = [
-        "&destination=",
-        encodeURIComponent(entry.location),
+        encodeURIComponent(entry.street),
         ',',
-        encodeURIComponent(entry.street)
-    ]
-    editElm.href = "https://www.google.com/maps/dir/?api=1" + link.join('')
+        encodeURIComponent(entry.location)
+    ].join('')
+    //https://wego.here.com/directions/mix//Oberstadl-1,Warngau
+    editElm.href = "https://wego.here.com/directions/mix/" + link
+
+    // var link = [
+    //     "&destination=",
+    //     encodeURIComponent(entry.location),
+    //     ',',
+    //     encodeURIComponent(entry.street)
+    // ]
+    // editElm.href = "https://www.google.com/maps/dir/?api=1" + link.join('')
 
     var editIcon = document.createElement('i')
     editIcon.className = "material-icons mdl-list__item-avatar"
