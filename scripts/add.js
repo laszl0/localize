@@ -23,12 +23,7 @@ function createRegionElement(uniqueId, uniqueValue) {
 
 function renderRegions() {
 
-    var regions = [
-        { 'id': 'region1', 'name': 'Region 1' },
-        { 'id': 'region2', 'name': 'Region 2' },
-        { 'id': 'region3', 'name': 'Region 3' },
-        { 'id': 'region4', 'name': 'Region 4' }
-    ]
+    var regions = loadRegions()
 
     var containerElm = document.getElementById("regions-container")
 
@@ -75,7 +70,11 @@ function buttonSaveHandler(e) {
     entries.push(entry)
     storeEntries(region, entries)
 
-    window.location.href = "/localize"
+    this.setAttribute("disabled", "")
+    //window.location.reload()
+    //window.close()
+    //window.history.go(-1)
+    //window.location.href = "/localize"
 }
 
 function buttonCancelHandler(e) {
