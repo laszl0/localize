@@ -9,3 +9,10 @@
     margin-left: 6px;
     margin-right: 6px;
 }
+
+/*inde page*/
+
+.index-edit-button .mdl-list__item-avatar{
+    color: #ff4081;
+    background-color: initial;
+}

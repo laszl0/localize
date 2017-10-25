@@ -8,6 +8,22 @@ function createEntryElement(entry) {
     var spanPrimaryElm = document.createElement('span')
     spanPrimaryElm.className = "mdl-list__item-primary-content"
 
+    var editElm = document.createElement('a')
+    editElm.className = "index-edit-button"
+
+    var link = [
+        "&destination=",
+        encodeURIComponent(entry.location),
+        ',',
+        encodeURIComponent(entry.street)
+    ]
+    editElm.href = "https://www.google.com/maps/dir/?api=1" + link.join('')
+
+    var editIcon = document.createElement('i')
+    editIcon.className = "material-icons mdl-list__item-avatar"
+    editIcon.innerHTML = "map"
+    editElm.appendChild(editIcon)
+
     var line1Elm = document.createElement("span")
     line1Elm.innerHTML = entry.street
 
@@ -15,6 +31,7 @@ function createEntryElement(entry) {
     line2Elm.className = "mdl-list__item-sub-title"
     line2Elm.innerHTML = entry.location
 
+    spanPrimaryElm.appendChild(editElm)
     spanPrimaryElm.appendChild(line1Elm)
     spanPrimaryElm.appendChild(line2Elm)
 
@@ -25,16 +42,17 @@ function createEntryElement(entry) {
     mapElm.className = "mdl-list__item-secondary-action"
 
     var link = [
-        "&destination=",
+        "||",
         encodeURIComponent(entry.location),
-        ',',
-        encodeURIComponent(entry.street)
+        '|',
+        encodeURIComponent(entry.street),
+        '||||'
     ]
-    mapElm.href = "https://www.google.com/maps/dir/?api=1" + link.join('')
+    mapElm.href = "/localize/add.html#q=" + link.join('')
 
     var mapIcon = document.createElement('i')
     mapIcon.className = "material-icons"
-    mapIcon.innerHTML = "map"
+    mapIcon.innerHTML = "edit"
     mapElm.appendChild(mapIcon)
 
     spanSecondElm.appendChild(mapElm)
