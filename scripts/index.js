@@ -13,11 +13,12 @@ function createEntryElement(region, entry) {
 
     var link = [
         encodeURIComponent(entry.street),
-        ',',
+        '/',
         encodeURIComponent(entry.location)
     ].join('')
+    //https://her.is/directions/drive/Bad Tolz/Munich
     //https://share.here.com/directions/mix//Oberstadl-1,Warngau
-    editElm.href = "https://share.here.com/directions/mix/" + link
+    editElm.href = "https://share.here.com/directions/drive/" + link
 
     // var link = [
     //     "&destination=",
