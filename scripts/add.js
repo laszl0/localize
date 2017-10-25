@@ -75,11 +75,11 @@ function buttonSaveHandler(e) {
     entries.push(entry)
     storeEntries(region, entries)
 
-    //window.history.back()
+    window.history.go(-1)
 }
 
 function buttonCancelHandler(e) {
-    window.history.back()
+    window.history.go(-1)
 }
 
 window.addEventListener('load', function (e) {
