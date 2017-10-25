@@ -23,6 +23,13 @@ function storeEntries(region, data) {
     localStorage.setItem(storeKey, locationsNewStr)
 }
 
+function loadEntry(region, id) {
+    var entries = loadEntries(region)
+    return entries.find(function (entry) {
+        return entry.id = id
+    })
+}
+
 function getToday() {
     var today = new Date();
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -39,3 +46,8 @@ function loadRegions() {
     return regions
 }
 
+function guidv4() {
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    )
+}

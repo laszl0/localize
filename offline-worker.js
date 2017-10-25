@@ -39,7 +39,7 @@
 
     // This is the unique name for the cache controlled by this version of the worker.
     get CACHE_NAME() {
-      return this.CACHE_PREFIX + '9d30248b332f18c06297e2bc5bd669d34bcdd800';
+      return this.CACHE_PREFIX + '66d45cac40c4d1e3198021e4e5027a73586934cd';
     },
 
     // This is a list of resources that will be cached.
@@ -51,11 +51,11 @@
       './images/icon-72x72.png', // b21ceba81e723de749057644daa9bf965f7a5151
       './images/icon-96x96.png', // 0426de5fe7815d94094fed99928c66e2a846abac
       './index.html', // df0fe41f4c54cc5522a3bb18872ba002c5c1a5b7
-      './scripts/add.js', // bd26d102b434ada187ae3e0f11970afe23e7f085
+      './scripts/add.js', // 91261a6ea499a7b774425eb5d4cd1ea2adab45ce
       './scripts/index.js', // 83e9eb10abdeefa7b091e103dd16eb32071d5748
       './scripts/material.min.js', // 1ab50540032210391656928cd1564530353096cd
       './scripts/offline-manager.js', // e2e09e000c5b64035940ae44e9c0936eb25ecd51
-      './scripts/shared.js', // cc828bccc78661b8f509ab705e8b6ffd485a32bf
+      './scripts/shared.js', // 0a43c5e0ff6dafe1d446e7860a1271fca78f09a9
       './styles/material-icons.css', // 6ca40c49309d3a7e62da2501c26e49e6d9224d6b
       './styles/material.min.css', // 62364e7cb9cfd9889c1bf3223ac1640509237b9a
       './styles/stylesheet.css', // a156025f0bdb4bdf3adce975194a1a3576c16079
