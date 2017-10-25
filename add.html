@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles/stylesheet.css">
 
     <script src="scripts/material.min.js"></script>
+    <script src="scripts/shared.js"></script>
     <script src="scripts/add.js"></script>
     <script src="scripts/offline-manager.js"></script>
 </head>
@@ -64,49 +65,28 @@
                     <div class="mdl-card__supporting-text">
                         <form action="#">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="sample3">
-                                <label class="mdl-textfield__label" for="sample3">location</label>
+                                <input class="mdl-textfield__input" type="text" id="location" name="location">
+                                <label class="mdl-textfield__label" for="location">location</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="sample3">
-                                <label class="mdl-textfield__label" for="sample3">street</label>
+                                <input class="mdl-textfield__input" type="text" id="street" name="street">
+                                <label class="mdl-textfield__label" for="street">street</label>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="sample3">
-                                <label class="mdl-textfield__label" for="sample3">number</label>
+                                <input class="mdl-textfield__input" type="text" id="number" name="number">
+                                <label class="mdl-textfield__label" for="number">number</label>
                             </div>
 
-                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                                <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
-                                <span class="mdl-radio__label">Region 1</span>
-                            </label>
-                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                                <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
-                                <span class="mdl-radio__label">Region 2</span>
-                            </label>
-                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                                <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
-                                <span class="mdl-radio__label">Region 3</span>
-                            </label>
-                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                                <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
-                                <span class="mdl-radio__label">Region 4</span>
-                            </label>
+                            <div id="regions-container"></div>
                         </form>
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                            Region 1
-                        </a>
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                            Region 2
-                        </a>
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                            Region 3
-                        </a>
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                            Region 4
-                        </a>
+                        <button id="button-save" class="add-button-sq mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                            Save
+                        </button>
+                        <button id="button-cancel" class="add-button-sq mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                            Back
+                        </button>
                     </div>
                 </div>
 

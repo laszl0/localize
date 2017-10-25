@@ -1,3 +1,11 @@
 .add-card-square{
     min-height: 50px;
 }
+.add-radio-square{
+    margin: 6px;
+}
+.add-button-sq{
+    float: right;
+    margin-left: 6px;
+    margin-right: 6px;
+}

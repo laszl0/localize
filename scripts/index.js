@@ -1,72 +1,98 @@
 
-function renderEntry(entry) {
 
-    var tr = document.createElement("tr")
+function createEntryElement(entry) {
 
-    var td1 = document.createElement("td")
-    td1.className = 'mdl-data-table__cell--non-numeric'
-    td1.innerHTML = entry.location //'Bad Tölz'
-    tr.appendChild(td1)
+    var liElm = document.createElement('li')
+    liElm.className = "mdl-list__item mdl-list__item--two-line"
 
-    var td2 = document.createElement("td")
-    td2.className = 'mdl-data-table__cell--non-numeric'
-    td2.innerHTML = entry.street //'Am Schloßplatz'
-    tr.appendChild(td2)
+    var spanPrimaryElm = document.createElement('span')
+    spanPrimaryElm.className = "mdl-list__item-primary-content"
 
-    var td3 = document.createElement("td")
-    td3.innerHTML = entry.number //'2'
-    tr.appendChild(td3)
+    var line1Elm = document.createElement("span")
+    line1Elm.innerHTML = entry.street
 
-    var td4 = document.createElement("td")
-    var map = document.createElement("a")
+    var line2Elm = document.createElement("span")
+    line2Elm.className = "mdl-list__item-sub-title"
+    line2Elm.innerHTML = entry.location
+
+    spanPrimaryElm.appendChild(line1Elm)
+    spanPrimaryElm.appendChild(line2Elm)
+
+    var spanSecondElm = document.createElement('span')
+    spanSecondElm.className = "mdl-list__item-secondary-content"
+
+    var mapElm = document.createElement('a')
+    mapElm.className = "mdl-list__item-secondary-action"
+
     var link = [
-        //'&origin=Current%20Location',
         "&destination=",
         encodeURIComponent(entry.location),
         ',',
         encodeURIComponent(entry.street)
     ]
-    map.href = "https://www.google.com/maps/dir/?api=1" + link.join('')
-    map.innerHTML = "map"
-    td4.appendChild(map)
-    tr.appendChild(td4)
+    mapElm.href = "https://www.google.com/maps/dir/?api=1" + link.join('')
 
-    componentHandler.upgradeElement(tr)
-    document.getElementById('table-body').appendChild(tr)
+    var mapIcon = document.createElement('i')
+    mapIcon.className = "material-icons"
+    mapIcon.innerHTML = "map"
+    mapElm.appendChild(mapIcon)
+
+    spanSecondElm.appendChild(mapElm)
+
+    liElm.appendChild(spanPrimaryElm)
+    liElm.appendChild(spanSecondElm)
+
+    return liElm
 }
 
 function renderEntries() {
-    for (var i = 0; i < window.locations.length; i++) {
-        renderEntry(window.locations[i])
-    }
-}
+    var regions = loadRegions()
+    var indexTabsElm = document.getElementById('index-tabs')
+    var containerNavbarElm = document.getElementById('index-tabs-navbar')
+    var containerContentElm = document.getElementById('index-tabs-content')
 
-function loadEntries() {
-    var locationsStr = localStorage.getItem("locations")
-    if (locationsStr === null) {
-        locationsStr = '[]'
-    }
-    window.locations = JSON.parse(locationsStr)
-    console.log(window.locations)
-}
+    for (var i = 0; i < regions.length; i++) {
 
-function addNewEntry() {
-    var hash = window.location.hash
-    console.log(hash)
-    document.getElementById('queryParams').innerHTML = hash
-    if (hash != '' && hash != '#') {
-        window.location.hash = ''
-        hash = decodeURIComponent(hash)
-        var parts = hash.split('|')
-        console.log(parts)
-        if (parts.length > 4) {
-            window.locations.push({ 'location': parts[3], 'street': parts[2], 'number': 3 })
-
-            // save locations to localstorage
-            var locationsNewStr = JSON.stringify(window.locations)
-            localStorage.setItem("locations", locationsNewStr)
+        // add navbar
+        var nav = document.createElement("a")
+        nav.href = "#panel-" + regions[i].id
+        nav.innerHTML = regions[i].name
+        nav.className = 'mdl-tabs__tab'
+        if (i == 0) {
+            nav.className = nav.className + ' is-active'
         }
+        componentHandler.upgradeElement(nav)
+        containerNavbarElm.appendChild(nav)
+
+        // add entries container
+        var containerEntriesElm = document.createElement("div")
+        containerEntriesElm.className = 'mdl-tabs__panel'
+        if (i == 0) {
+            containerEntriesElm.className = containerEntriesElm.className + ' is-active'
+        }
+        containerEntriesElm.id = "panel-" + regions[i].id
+        componentHandler.upgradeElement(containerEntriesElm)
+        containerContentElm.appendChild(containerEntriesElm)
+
+        // add entries
+        var entries = loadEntries(regions[i].id)
+
+        var containerListElm = document.createElement("ul")
+        containerListElm.className = "mdl-list"
+
+        for (var j = 0; j < entries.length; j++) {
+            var entryElm = createEntryElement(entries[j])
+            componentHandler.upgradeElement(entryElm)
+            containerListElm.appendChild(entryElm)
+        }
+
+        componentHandler.upgradeElement(containerListElm)
+        containerEntriesElm.appendChild(containerListElm)
+
     }
+
+    componentHandler.downgradeElements(indexTabsElm)
+    componentHandler.upgradeElement(indexTabsElm)
 }
 
 function buttonClearLocalStorage(e) {
@@ -81,15 +107,15 @@ function buttonClearLocalStorage(e) {
 
 window.addEventListener('load', function (e) {
 
-    var buttonClear1 = document.getElementById("button-clear1")
-    buttonClear1.addEventListener("click", buttonClearLocalStorage, false)
-
     // get locations from localstorage
-    loadEntries()
-
-    // add new location
-    addNewEntry()
+    //loadEntries()
 
     // display locations
     renderEntries()
+
+    // activate tab, also save last active tab
+
+    //var buttonClear1 = document.getElementById("button-clear1")
+    //buttonClear1.addEventListener("click", buttonClearLocalStorage, false)
+
 }, false)
