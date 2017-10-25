@@ -31,10 +31,10 @@ function getToday() {
 
 function loadRegions() {
     var regions = [
-        { 'id': 'region1', 'name': 'Region 1' },
-        { 'id': 'region2', 'name': 'Region 2' },
-        { 'id': 'region3', 'name': 'Region 3' },
-        { 'id': 'region4', 'name': 'Region 4' }
+        { 'id': 'region1', 'name': '1 Region' },
+        { 'id': 'region2', 'name': '2 Region' },
+        { 'id': 'region3', 'name': '3 Region' },
+        { 'id': 'region4', 'name': '4 Region' }
     ]
     return regions
 }

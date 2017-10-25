@@ -75,11 +75,11 @@ function buttonSaveHandler(e) {
     entries.push(entry)
     storeEntries(region, entries)
 
-    window.history.go(-1)
+    window.location.href = "/localize"
 }
 
 function buttonCancelHandler(e) {
-    window.history.go(-1)
+    window.location.href = "/localize"
 }
 
 window.addEventListener('load', function (e) {
