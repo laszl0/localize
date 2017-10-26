@@ -11,22 +11,24 @@ function createEntryElement(region, entry) {
     var editElm = document.createElement('a')
     editElm.className = "index-edit-button"
 
-    // var link = [
-    //     encodeURIComponent(entry.street),
-    //     ',',
-    //     encodeURIComponent(entry.location)
-    // ].join('')
-    // //https://her.is/directions/drive/Bad Tolz/Munich
-    // //https://share.here.com/directions/mix//Oberstadl-1,Warngau
-    // editElm.href = "https://wego.here.com/directions/drive//" + link
-
     var link = [
-        "&destination=",
-        encodeURIComponent(entry.location),
+        encodeURIComponent(entry.street),
         ',',
-        encodeURIComponent(entry.street)
+        encodeURIComponent(entry.location)
     ].join('')
-    editElm.href = "https://www.google.com/maps/dir/?api=1" + link
+    //https://wego.here.com/directions/drive//
+    //https://her.is/directions/drive/Bad Tolz/Munich
+    //https://share.here.com/directions/mix//Oberstadl-1,Warngau
+    //https://share.here.com/r/52.456115,13.439375,Berlin/53.0999803,8.8352297,My%20Home?m=d&a=tunnel,motorway
+    editElm.href = "https://wego.here.com/r//" + link
+
+    // var link = [
+    //     "&destination=",
+    //     encodeURIComponent(entry.location),
+    //     ',',
+    //     encodeURIComponent(entry.street)
+    // ].join('')
+    // editElm.href = "https://www.google.com/maps/dir/?api=1" + link
 
     var editIcon = document.createElement('i')
     editIcon.className = "material-icons mdl-list__item-avatar"
