@@ -17,6 +17,7 @@ function createEntryElement(region, entry) {
         ',',
         encodeURIComponent(entry.location)
     ].join('')
+    //https://wego.here.com/directions/drive/Bad Tolz/Munich
     //https://wego.here.com/directions/drive//
     //https://her.is/directions/drive/Bad Tolz/Munich
     //https://share.here.com/directions/mix//Oberstadl-1,Warngau
@@ -58,7 +59,8 @@ function createEntryElement(region, entry) {
     //     "|",
     //     entry.id,
     // ].join('')
-    mapElm.href = "/localize/edit.html#id=" + entry.id
+    //mapElm.href = "/localize/edit.html#id=" + entry.id
+    mapElm.href = 'https%3A%2F%2Fshare.here.com%2Fr%2F47.76611%2C11.53923%2CBurgsteinstra%25C3%259Fe%252016%2F48.02159%2C12.7264%2CM%25C3%25BCnichham%3Fm%3Dd%26ref%3Dandroid'
 
     var mapIcon = document.createElement('i')
     mapIcon.className = "material-icons"
