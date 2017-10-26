@@ -24,8 +24,8 @@ function createEntryElement(region, entry) {
 
     // google maps
     var link = [
-        //"https://www.google.com/maps/dir/?api=1",
-        "https://www.google.com/maps/@?api=1&map_action=map",
+        "https://www.google.com/maps/dir/?api=1",
+        //"https://www.google.com/maps/@?api=1&map_action=map",
         "&destination=",
         encodeURIComponent(entry.location),
         ',',
