@@ -11,18 +11,23 @@ function createEntryElement(region, entry) {
     var editElm = document.createElement('a')
     editElm.className = "index-edit-button"
 
-    var link = [
-        'end:',
+    var mapLink = [
+        'https://share.here.com/r/',
+        '/',
         encodeURIComponent(entry.street),
         ',',
-        encodeURIComponent(entry.location)
+        encodeURIComponent(entry.location),
+        '?m=d&ref=android'
     ].join('')
+    editElm.href = mapLink
+
+    // 'https://share.here.com/r/47.76611,11.53923,Burgsteinstra%C3%9Fe%2016/48.02159,12.7264,M%C3%BCnichham?m=d&ref=android'
     //https://wego.here.com/directions/drive/Bad Tolz/Munich
     //https://wego.here.com/directions/drive//
     //https://her.is/directions/drive/Bad Tolz/Munich
     //https://share.here.com/directions/mix//Oberstadl-1,Warngau
     //https://share.here.com/r/52.456115,13.439375,Berlin/53.0999803,8.8352297,My%20Home?m=d&a=tunnel,motorway
-    editElm.href = "https://wego.here.com/directions/drive//" + link
+    
 
     // var link = [
     //     "&destination=",
@@ -54,14 +59,12 @@ function createEntryElement(region, entry) {
     var mapElm = document.createElement('a')
     mapElm.className = "mdl-list__item-secondary-action"
 
-    // var link = [
-    //     region.id,
-    //     "|",
-    //     entry.id,
-    // ].join('')
-    //mapElm.href = "/localize/edit.html#id=" + entry.id
-    mapElm.href = 'https://share.here.com/r/47.76611,11.53923,Burgsteinstra%C3%9Fe%2016/48.02159,12.7264,M%C3%BCnichham?m=d&ref=android'
-    
+    var editLink = [
+        "/localize/edit.html#id=",
+        entry.id
+    ].join('')
+    mapElm.href = editLink
+
     var mapIcon = document.createElement('i')
     mapIcon.className = "material-icons"
     mapIcon.innerHTML = "edit"
