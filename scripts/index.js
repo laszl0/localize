@@ -60,8 +60,8 @@ function createEntryElement(region, entry) {
     //     entry.id,
     // ].join('')
     //mapElm.href = "/localize/edit.html#id=" + entry.id
-    mapElm.href = 'https%3A%2F%2Fshare.here.com%2Fr%2F47.76611%2C11.53923%2CBurgsteinstra%25C3%259Fe%252016%2F48.02159%2C12.7264%2CM%25C3%25BCnichham%3Fm%3Dd%26ref%3Dandroid'
-
+    mapElm.href = 'https://share.here.com/r/47.76611,11.53923,Burgsteinstra%C3%9Fe%2016/48.02159,12.7264,M%C3%BCnichham?m=d&ref=android'
+    
     var mapIcon = document.createElement('i')
     mapIcon.className = "material-icons"
     mapIcon.innerHTML = "edit"
