@@ -42,7 +42,7 @@ function createEntryElement(region, entry) {
         '"https://www.google.com/maps',
         '?saddr=(','47.7654765','%2C','11.5385625',')',
         '&daddr=(','47.77815','%2C','11.7729813',')'
-    ]
+    ].join('')
     editElm.href = link
 
     var editIcon = document.createElement('i')
