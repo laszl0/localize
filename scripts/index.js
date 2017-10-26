@@ -11,32 +11,27 @@ function createEntryElement(region, entry) {
     var editElm = document.createElement('a')
     editElm.className = "index-edit-button"
 
-    var mapLink = [
-        'https://share.here.com/r/',
-        'mylocation/',
-        encodeURIComponent(entry.street),
-        ',',
-        encodeURIComponent(entry.location),
-        '?m=d&ref=android'
-    ].join('')
-    editElm.href = mapLink
-
-    //https://share.here.com/r/mylocation/
-    // 'https://share.here.com/r/47.76611,11.53923,Burgsteinstra%C3%9Fe%2016/48.02159,12.7264,M%C3%BCnichham?m=d&ref=android'
-    //https://wego.here.com/directions/drive/Bad Tolz/Munich
-    //https://wego.here.com/directions/drive//
-    //https://her.is/directions/drive/Bad Tolz/Munich
-    //https://share.here.com/directions/mix//Oberstadl-1,Warngau
-    //https://share.here.com/r/52.456115,13.439375,Berlin/53.0999803,8.8352297,My%20Home?m=d&a=tunnel,motorway
-    
-
-    // var link = [
-    //     "&destination=",
-    //     encodeURIComponent(entry.location),
+    // here maps, only works with lat,long coord
+    // var mapLink = [
+    //     'https://share.here.com/r/',
+    //     'mylocation/',
+    //     encodeURIComponent(entry.street),
     //     ',',
-    //     encodeURIComponent(entry.street)
+    //     encodeURIComponent(entry.location),
+    //     '?m=d&ref=android'
     // ].join('')
-    // editElm.href = "https://www.google.com/maps/dir/?api=1" + link
+    // editElm.href = mapLink
+
+    // google maps
+    var link = [
+        //"https://www.google.com/maps/dir/?api=1",
+        "https://www.google.com/maps/@?api=1&map_action=map",
+        "&destination=",
+        encodeURIComponent(entry.location),
+        ',',
+        encodeURIComponent(entry.street)
+    ].join('')
+    editElm.href = link
 
     var editIcon = document.createElement('i')
     editIcon.className = "material-icons mdl-list__item-avatar"
