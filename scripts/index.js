@@ -12,38 +12,43 @@ function createEntryElement(region, entry) {
     editElm.className = "index-edit-button"
 
     // here maps, only works with lat,long coord
-    // var mapLink = [
-    //     'https://share.here.com/r/',
-    //     'mylocation/',
-    //     encodeURIComponent(entry.street),
-    //     ',',
-    //     encodeURIComponent(entry.location),
-    //     '?m=d&ref=android'
-    // ].join('')
-    // editElm.href = mapLink
+    var mapLink1 = [
+        'https://share.here.com/r/',
+        'mylocation/',
+        encodeURIComponent(entry.street),
+        ',',
+        encodeURIComponent(entry.location),
+        '?m=d&ref=android'
+    ].join('')
+    var mapLink = [
+        'https://share.here.com/r/',
+        'mylocation/',
+        '47.77815',',','11.7729813',
+        '?m=d&ref=android'
+    ].join('')
+    editElm.href = mapLink
 
-    // google maps
-    //
-    var link1 = [
-        "https://www.google.com/maps/dir/?api=1",
-        "&destination=",
-        encodeURIComponent(entry.location),
-        ',',
-        encodeURIComponent(entry.street)
-    ].join('')
-    var link2 = [
-        "https://www.google.com/maps?saddr=",
-        "&daddr=",
-        encodeURIComponent(entry.location),
-        ',',
-        encodeURIComponent(entry.street)
-    ].join('')
-    var link = [
-        'https://www.google.com/maps',
-        '?saddr=(','47.7654765','%2C','11.5385625',')',
-        '&daddr=(','47.77815','%2C','11.7729813',')'
-    ].join('')
-    editElm.href = link
+    // google maps, only works if online
+    // var link1 = [
+    //     "https://www.google.com/maps/dir/?api=1",
+    //     "&destination=",
+    //     encodeURIComponent(entry.location),
+    //     ',',
+    //     encodeURIComponent(entry.street)
+    // ].join('')
+    // var link2 = [
+    //     "https://www.google.com/maps?saddr=",
+    //     "&daddr=",
+    //     encodeURIComponent(entry.location),
+    //     ',',
+    //     encodeURIComponent(entry.street)
+    // ].join('')
+    // var link = [
+    //     'https://www.google.com/maps',
+    //     '?saddr=(','47.7654765','%2C','11.5385625',')',
+    //     '&daddr=(','47.77815','%2C','11.7729813',')'
+    // ].join('')
+    // editElm.href = link
 
     var editIcon = document.createElement('i')
     editIcon.className = "material-icons mdl-list__item-avatar"
