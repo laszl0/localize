@@ -39,7 +39,7 @@ function createEntryElement(region, entry) {
         encodeURIComponent(entry.street)
     ].join('')
     var link = [
-        '"https://www.google.com/maps?',
+        '"https://www.google.com/maps',
         '?saddr=(','47.7654765','%2C','11.5385625',')',
         '&daddr=(','47.77815','%2C','11.7729813',')'
     ]
