@@ -23,10 +23,17 @@ function createEntryElement(region, entry) {
     // editElm.href = mapLink
 
     // google maps
-    var link = [
+    //
+    var link1 = [
         "https://www.google.com/maps/dir/?api=1",
-        //"https://www.google.com/maps/@?api=1&map_action=map",
         "&destination=",
+        encodeURIComponent(entry.location),
+        ',',
+        encodeURIComponent(entry.street)
+    ].join('')
+    var link = [
+        "https://www.google.com/maps?saddr=",
+        "&daddr=",
         encodeURIComponent(entry.location),
         ',',
         encodeURIComponent(entry.street)
