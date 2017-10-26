@@ -12,6 +12,7 @@ function createEntryElement(region, entry) {
     editElm.className = "index-edit-button"
 
     var link = [
+        'end:',
         encodeURIComponent(entry.street),
         ',',
         encodeURIComponent(entry.location)
