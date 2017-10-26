@@ -20,7 +20,7 @@ function createEntryElement(region, entry) {
     //https://her.is/directions/drive/Bad Tolz/Munich
     //https://share.here.com/directions/mix//Oberstadl-1,Warngau
     //https://share.here.com/r/52.456115,13.439375,Berlin/53.0999803,8.8352297,My%20Home?m=d&a=tunnel,motorway
-    editElm.href = "https://wego.here.com/r//" + link
+    editElm.href = "https://wego.here.com/directions//" + link
 
     // var link = [
     //     "&destination=",
