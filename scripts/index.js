@@ -13,7 +13,7 @@ function createEntryElement(region, entry) {
 
     var mapLink = [
         'https://share.here.com/r/',
-        '/',
+        'mylocation/',
         encodeURIComponent(entry.street),
         ',',
         encodeURIComponent(entry.location),
@@ -21,6 +21,7 @@ function createEntryElement(region, entry) {
     ].join('')
     editElm.href = mapLink
 
+    //https://share.here.com/r/mylocation/
     // 'https://share.here.com/r/47.76611,11.53923,Burgsteinstra%C3%9Fe%2016/48.02159,12.7264,M%C3%BCnichham?m=d&ref=android'
     //https://wego.here.com/directions/drive/Bad Tolz/Munich
     //https://wego.here.com/directions/drive//
