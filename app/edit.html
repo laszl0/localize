@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=yes">
+
+    <title>localize</title>
+    <meta name="description" content="localize : A template app bootstrapped with oghliner.">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#3f51b5">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="localize" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="localize">
+
+    <link rel="apple-touch-icon" href="images/icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="images/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/icon-192x192.png">
+
+    <meta name="msapplication-TileImage" content="images/manifest/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3f51b5">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="stylesheet" href="styles/material.min.css">
+    <link rel="stylesheet" href="styles/material-icons.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/stylesheet.css">
+
+    <script src="scripts/material.min.js"></script>
+    <script src="scripts/shared.js"></script>
+    <script src="scripts/edit.js"></script>
+    <script src="scripts/offline-manager.js"></script>
+</head>
+
+<body>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title" id="queryParams">edit</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">edit</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="/localize">list</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+
+                <div class="add-card-square mdl-card mdl-shadow--2dp" style="width: 100%">
+                    <div class="mdl-card__supporting-text">
+                        <form action="#">
+                            <input type="hidden" id="id" >
+                            <div id="field-location" class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="location" name="location">
+                                <label class="mdl-textfield__label" for="location">location</label>
+                            </div>
+                            <div id="field-street" class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="street" name="street">
+                                <label class="mdl-textfield__label" for="street">street</label>
+                            </div>
+                            <div id="field-number" class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="number" name="number">
+                                <label class="mdl-textfield__label" for="number">number</label>
+                            </div>
+
+                            <div id="regions-container"></div>
+                        </form>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <button id="button-delete" class="delete-button-sq mdl-button mdl-js-button mdl-button--accent">
+                            Delete
+                        </button>
+
+                        <button id="button-save" class="add-button-sq mdl-button mdl-js-button mdl-button--colored">
+                            Save
+                        </button>
+                        <button id="button-cancel" class="add-button-sq mdl-button mdl-js-button mdl-button--colored">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+.add-card-square{
+    min-height: 50px;
+}
+.add-radio-square{
+    margin: 6px;
+}
+.add-button-sq,
+.cancel-button-sq{
+    float: right;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.delete-button-sq{
+    float: left;
+}
+
+/*inde page*/
+
+.index-edit-button .mdl-list__item-avatar{
+    color: #ff4081;
+    background-color: initial;
+}

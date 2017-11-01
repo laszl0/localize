@@ -31,22 +31,49 @@
   <meta name="msapplication-TileColor" content="#3f51b5">
   <meta name="msapplication-tap-highlight" content="no">
 
+  <link rel="stylesheet" href="styles/material.min.css">
+  <link rel="stylesheet" href="styles/material-icons.css">
   <link rel="stylesheet" type="text/css" media="screen" href="styles/stylesheet.css">
 
-  <script src="scripts/main.js"></script>
+  <script src="scripts/material.min.js"></script>
+  <script src="scripts/shared.js"></script>
+  <script src="scripts/index.js"></script>
   <script src="scripts/offline-manager.js"></script>
 </head>
 
 <body>
-  <div id="queryParams">this is going to be replaced when running</div>
-  <a href="https://www.google.com/maps/@?api=1&map_action=map">test map open</a>
-  <p>test update</p>
-  <script>
-    // Check if a new cache is available on page load.
-    window.addEventListener('load', function (e) {
-      
-    }, false);
-  </script>
+
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title" id="queryParams">list</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">list</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="" id="button-clear1">Clear2</a>
+        <a class="mdl-navigation__link" href="/localize/add.html">add</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+
+        <div id="index-tabs" class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+          <div id="index-tabs-navbar" class="mdl-tabs__tab-bar"></div>
+          <div id="index-tabs-content"></div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <!--  <a href="https://www.google.com/maps/@?api=1&map_action=map">test map open</a>
+  <p>test update</p> 
+-->
+
 </body>
 
 </html>
